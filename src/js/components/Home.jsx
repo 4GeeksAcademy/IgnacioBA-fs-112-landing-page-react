@@ -10,6 +10,7 @@ import Card from "./Card";
 
 //create your first component
 const Home = () => {
+	const cards = [1, 2, 3, 4];
 	return (
 		<div>
 			<Navbar />
@@ -18,23 +19,16 @@ const Home = () => {
 					<Jumbotron />
 				</div>
 			</div>
-			<div className="container mt-4 d-flex flex-row mx-auto" style={{ maxWidth: "1300px" }}>
-				<div className="card1  mx-3">
-					<Card />
-				</div>
-				<div className="card2  mx-3">
-					<Card />
-				</div>
-				<div className="card3  mx-3">
-					<Card />
-				</div>
-				<div className="card4  mx-3">
-					<Card />
-				</div>
+			<div className= "container my-4">
+				<div className="row g-4">
+				{cards.map((index) => (
+					<div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3">
+						<Card />
+					</div>
+				))}
 			</div>
-
-
-
+			</div>
+			
 		</div>
 
 	);
